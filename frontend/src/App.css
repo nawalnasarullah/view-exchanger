@@ -1,0 +1,58 @@
+* {
+  --black: #000;
+  --white: #fff;
+  --navSection-color-A: #686d76;
+  --navSection-color-B: #373a40;
+  --card-color-A: rgb(238, 21, 94);
+  --card-color-A-hover: rgb(200, 9, 73);
+  --pic-border-colour: grey;
+  --footer-bg-color: #343a40;
+}
+
+.navbar {
+  background: linear-gradient(
+    270deg,
+    var(--navSection-color-A) 0%,
+    var(--navSection-color-B) 100%
+  );
+}
+
+.contact-us-section {
+  /* background-image: url('assets/images/contact-background.jpg'); */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 60px 0;
+}
+
+.contact-us-section .form-block {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-us-section .form-block:hover {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.text-block {
+  color: white;
+}
+
+.nav-link {
+  font-size: large;
+}
+
+.profile-link {
+  position: relative;
+}
+
+.points {
+  position: absolute;
+  top: 0;
+  right: -20px;
+}
+
