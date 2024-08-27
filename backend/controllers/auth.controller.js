@@ -76,7 +76,7 @@ export default class Auth {
   }
 
   async logout(req, res, next) {
-   
+    
     try {
       res.cookie('auth_token', null, {expiresIn: Date.now()}).json({
         success: true,

@@ -44,7 +44,6 @@ export default class userController {
 
   async getMe(req, res, next) {
     const id = req.user.id;
-    console.log(id);
     try{
       const user = await User.findById(id);
       res.json({

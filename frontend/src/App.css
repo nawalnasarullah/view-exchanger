@@ -84,6 +84,18 @@
   color: var(--card-color-A-hover) !important;
 }
 
+.logout-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--white);
+  padding: 8px;
+  font-size: large;
+}
+
+.logout-btn:hover {
+  text-decoration: underline;
+}
+
 
 
 

@@ -1,8 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useGetMeQuery, useLazyLogoutQuery } from "../redux/api/authApi";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserInfo } from "../redux/features/authSlice";
 
 
 function NavBar() {
+
+  const {isLoading } = useGetMeQuery();
+
+  const {isAuthenticated, user} = useSelector(state=>state.auth)
+
+  const [logout] = useLazyLogoutQuery();
+
+  const navigate = useNavigate();
+  
+
+  const handleLogout = async () => {
+    const res = await logout().unwrap()
+    console.log("logout", res);
+    navigate(0);
+  }
 
 
   return (
@@ -31,16 +49,6 @@ function NavBar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/login">
-                  Login
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/signup">
-                  Signup
-                </Link>
-              </li>
-              <li className="nav-item">
                 <Link className="nav-link" to="/aboutUs">
                   About Us
                 </Link>
@@ -50,12 +58,30 @@ function NavBar() {
                   Contact Us
                 </Link>
               </li>
+              {
+                !isAuthenticated ? <>
+                <li className="nav-item">
+                <Link className="nav-link" to="/login">
+                  Login
+                </Link>
+              </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/signup">
+                  Signup
+                </Link>
+              </li>
+                </> : <>
+                <li className="nav-item">
+                        <button className="logout-btn" onClick={handleLogout}>Logout</button>
+                </li>
+                <li className="nav-item">
                 <Link className="nav-link profile-link" to="/profilePage">
                 <i class="fa-regular fa-user"></i>
                 <div className="points">0</div>
                 </Link>
               </li>
+                </>
+              }
             </ul>
           </div>
         </div>
