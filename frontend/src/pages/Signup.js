@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useState } from 'react';
@@ -12,6 +12,8 @@ const Signup = () => {
     const dispatch = useDispatch();
 
     const[apiMessage, setApiMessage] = useState(null);
+
+    const navigate = useNavigate();
 
 
     const { handleChange, handleBlur, handleSubmit, handleReset, errors, touched, values, setFieldValue} = useFormik({
@@ -45,6 +47,9 @@ const Signup = () => {
             console.log(user);
             if(user){
                 setApiMessage(user);
+                setTimeout(() => {
+                    navigate('/login');
+                }, 1000);
             }else{
                 setApiMessage({
                     success: false,
@@ -63,7 +68,6 @@ const Signup = () => {
           if (reader.readyState === 2) {
             setFieldValue('avatar', reader.result);
             setPreview(reader.result)
-            document.getElementById('preview-reset').reset()
           }
         } 
         reader.readAsDataURL(e.target.files[0]);

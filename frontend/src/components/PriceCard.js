@@ -1,11 +1,30 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-function PriceCard({pricingCard, isLoggedIn}) {
+function PriceCard({pricingCard}) {
+
+  const { isAuthenticated } = useSelector((state) => state.auth);
   const navigate = useNavigate();
 
   const handleGetStarted = () => {
-    navigate('/payment');
+
+    if(!isAuthenticated){
+     
+      navigate('/login')
+    }else{
+      navigate('/checkout', { 
+        state: { 
+          price: pricingCard.price, 
+          packageName: pricingCard.title, 
+          Pkginformation: pricingCard.desp,
+        } 
+        
+      })
+
+      
+      
+    }
   };
 
   return (
@@ -16,7 +35,7 @@ function PriceCard({pricingCard, isLoggedIn}) {
             <h5>
               <strong>{pricingCard.title}</strong>
             </h5>
-            <span>{pricingCard.price}</span>
+            <span>${pricingCard.price}/month</span>
             <p>{pricingCard.desp}</p>
           </div>
           <div className="card-body">

@@ -1,17 +1,13 @@
 import React, { useEffect } from "react";
-
-
+import { useSelector } from "react-redux";
 
 const ProfilePage = () => {
+  const { user } = useSelector((state) => state.auth);
+  console.log(user);
 
+  useEffect(() => {}, []);
 
-  useEffect(() => {
-    
-  }, []);
-
-  const handleRedeemPoints = () => {
-
-  };
+  const handleRedeemPoints = () => {};
 
   return (
     <div className="container app mt-5 mb-4">
@@ -20,28 +16,36 @@ const ProfilePage = () => {
           <div className="card profile-card mb-3">
             <div className="card-header d-flex justify-content-between align-items-center text-white">
               <span>User Profile</span>
-              <button className="btn btn-sm btn-secondary">Edit</button>
             </div>
             <div className="card-body">
               <div className="row">
-                <div className="col-12 col-md-3 d-flex flex-column align-items-center">
+                <div className="col-12 col-md-6 d-flex flex-column align-items-center align-items-md-start">
                   <img
-                    src={
-                      "https://via.placeholder.com/150"
-                    }
+                    src={user?.user?.avatar}
                     alt="Profile"
                     className="rounded-circle mb-3"
                     style={{ width: "150px", height: "150px" }}
                   />
                 </div>
-                <div className="col-12 col-md-9 d-flex flex-column">
-                  <h2>Name: {}</h2>
+                <div className="col-12 col-md-6 d-flex flex-column align-items-center align-items-md-start">
+                  <h4 className="text-center text-md-start">
+                    Username: {user?.user?.username}
+                  </h4>
+                  <h4 className="text-center text-md-start">
+                    Name: {user?.user?.firstName} {user?.user?.lastName}
+                  </h4>
+                  <h4 className="text-center text-md-start">
+                    Email: {user?.user?.email}
+                  </h4>
+                  <h4 className="text-center text-md-start">
+                    Phone no: {user?.user?.phoneNumber}
+                  </h4>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="col-12">
           <div className="card points-card">
             <div className="card-body">
               <table className="table table-bordered">
@@ -62,7 +66,10 @@ const ProfilePage = () => {
               </table>
             </div>
             <div className="card-footer text-center">
-              <button className="btn btn-primary" onClick={handleRedeemPoints}>
+              <button
+                className="btn btn-primary btn-block"
+                onClick={handleRedeemPoints}
+              >
                 Redeem Points
               </button>
             </div>

@@ -1,6 +1,7 @@
 import express from "express";
 import authRoutes from "./routes/auth.routes.js";
 import userRoutes from "./routes/user.routes.js";
+import paymentRoutes from "./routes/payment.routes.js";
 import { connectDB } from "./config/db.js";
 import { v2 as cloudinary } from "cloudinary";
 import 'dotenv/config'
@@ -30,14 +31,14 @@ app.use(express.urlencoded({limit: '50mb'}));
 
 app.use('/', authRoutes);
 app.use('/', userRoutes);
+app.use('/', paymentRoutes);
 
 
-app.use('*', (req, res, next)=>{
-    res.json({
-        mesage:'The requested resource is not found'
-    })
-})
-
+// app.use('*', (req, res, next)=>{
+//     res.json({
+//         mesage:'The requested resource is not found'
+//     })
+// })
 
 
 app.use(error)

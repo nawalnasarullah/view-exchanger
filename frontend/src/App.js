@@ -7,7 +7,6 @@ import {
   Router,
   RouterProvider,
 } from "react-router-dom";
-import PaymentPage from "./pages/PaymentPage";
 import Layout from "./components/Layout";
 import ProfilePage from "./pages/ProfilePage";
 import ContactUsPage from "./pages/ContactUsPage";
@@ -17,6 +16,8 @@ import { useSelector } from "react-redux";
 import Error from "./components/Error";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import CheckoutPage from "./pages/CheckoutPage";
+import SuccessPage from "./pages/SuccessPage";
 
 
 function App() {
@@ -47,7 +48,8 @@ function App() {
             )
           }
         />
-        <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/success" element={<SuccessPage />} />
         <Route path="/profilePage" element={<ProfilePage />} />
         <Route path="/contactUs" element={<ContactUsPage />} />
         <Route path="/aboutUs" element={<AboutUsPage />} />

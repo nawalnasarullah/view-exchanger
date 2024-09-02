@@ -37,7 +37,7 @@ export const workingCards = [
 export const pricingCards = [
   {
     title: "Starter",
-    price: "$79/month",
+    price: 1,
     desp: "For those wanting to dip their toes in, the starter package is for you. Please note, no likes included.",
     perVideo: "1000 to 1500 per video",
     watchTime: "40 to 90% watch time per video",
@@ -45,7 +45,7 @@ export const pricingCards = [
   },
   {
     title: "Starter",
-    price: "$79/month",
+    price: 73,
     desp: "For those wanting to dip their toes in, the starter package is for you. Please note, no likes included.",
     perVideo: "1000 to 1500 per video",
     watchTime: "40 to 90% watch time per video",
@@ -53,7 +53,7 @@ export const pricingCards = [
   },
   {
     title: "Starter",
-    price: "$79/month",
+    price: 59,
     desp: "For those wanting to dip their toes in, the starter package is for you. Please note, no likes included.",
     perVideo: "1000 to 1500 per video",
     watchTime: "40 to 90% watch time per video",
@@ -61,7 +61,7 @@ export const pricingCards = [
   },
   {
     title: "Starter",
-    price: "$79/month",
+    price: 34,
     desp: "For those wanting to dip their toes in, the starter package is for you. Please note, no likes included.",
     perVideo: "1000 to 1500 per video",
     watchTime: "40 to 90% watch time per video",

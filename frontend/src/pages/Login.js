@@ -42,9 +42,6 @@ const Login = () => {
                 setApiMessage(res);
             }
 
-            
-    
-
         },
     });
     return (
@@ -101,7 +98,7 @@ const Login = () => {
                           <button type="submit" className="btn btn-primary mb-3">
                               Log in
                           </button> <br />
-                          <Link to="/register" className="text-primary">
+                          <Link to="/signup" className="text-primary">
                               Don't have an Account?
                           </Link>
                       </div>

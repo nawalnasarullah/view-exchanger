@@ -9,6 +9,192 @@
   --footer-bg-color: #343a40;
 }
 
+.nav-wrapper {
+  padding: 20px 0;
+  height: 500px;
+  background: linear-gradient(
+    270deg,
+    var(--navSection-color-A) 0%,
+    var(--navSection-color-B) 100%
+  );
+}
+
+.nav-link {
+  color: var(--white);
+  transition: text-decoration 0.15s ease-in-out;
+}
+
+.nav-link:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+.img-part img {
+  max-width: 100%;
+  height: auto;
+}
+
+.text-part {
+  color: var(--white);
+}
+
+.btn {
+  padding: 20px 40px;
+  font-size: 1.1rem;
+}
+
+.btn-secondary {
+  background-color: transparent;
+}
+
+/********************** MAIN *********************/
+
+.feature-section {
+  margin-top: 80px;
+}
+
+.icon {
+  border: 2px solid var(--white);
+  border-radius: 50%;
+}
+
+.icon img {
+  padding: 14px;
+  width: 54px;
+}
+
+.logo-container {
+  text-align: center;
+  padding: 20px 0;
+}
+.logo {
+  max-width: 100px;
+  margin: 0 20px;
+}
+
+.pricing-table {
+  padding: 20px;
+}
+
+.pricing-section {
+  margin-top: 65px !important;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.card-header {
+  background-color: var(--card-color-A);
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+}
+
+.card-header h5 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+.card-header span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+  padding: 8px 0;
+}
+
+.card-header p {
+  font-size: 0.6rem;
+  color: var(--white);
+  padding: 8px 0;
+  margin-bottom: 0;
+}
+
+.card-body {
+  background-color: var(--white);
+  padding: 10px;
+  text-align: center;
+}
+.card-body strong {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+}
+
+.card-body p {
+  font-size: 0.6rem;
+}
+
+.card-footer {
+  background-color: var(--white);
+  text-align: center;
+  border-top: none;
+  padding-bottom: 20px;
+}
+
+.card-footer .btn {
+  padding: 10px 20px;
+  width: 100%;
+  background-color: var(--card-color-A);
+  border: 2px solid var(--card-color-A);
+  border-radius: 28px;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.card-footer .btn:hover {
+  background-color: var(--card-color-A-hover);
+  border: 2px solid var(--card-color-A-hover);
+}
+
+.working-section {
+  margin-top: 65px;
+}
+
+.working-section img {
+  border-radius: 50%;
+  padding: 6px;
+  border: 2px solid var(--pic-border-colour);
+}
+
+/********************** FOOTER *********************/
+
+.footer {
+  background: linear-gradient(
+    270deg,
+    var(--navSection-color-A) 0%,
+    var(--navSection-color-B) 100%
+  );
+  color: var(--white);
+  padding: 20px 0;
+  bottom: 0;
+}
+
+.footer a {
+  color: var(--white);
+  margin: 0 10px;
+  text-decoration: none;
+  transition: text-decoration 0.3s ease-in-out;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-left {
+  padding-left: 20px;
+}
+
+.footer-right {
+  padding-right: 20px;
+  text-align: right;
+}
+
+.footer-right ul li {
+  list-style: none;
+}
+
 .navbar {
   background: linear-gradient(
     270deg,
@@ -94,6 +280,78 @@
 
 .logout-btn:hover {
   text-decoration: underline;
+}
+
+.payment-label {
+  padding: 20px 40px;
+  background-color: var(--card-color-A);
+  border-radius: 8px;
+  align-content: center;
+  margin-bottom: 20px;
+  color: var(--white);
+  text-align: center;
+  transition: background 0.3s ease-in-out;
+}
+
+.payment-label:hover {
+  background-color: var(--card-color-A-hover);
+}
+
+.text-muted {
+  font-size: 15px !important;
+}
+
+.checkout-body {
+  padding: 40px;
+}
+
+
+
+/********************** MEDIA QUERY *********************/
+
+@media (max-width: 992px) {
+  .secondary-nav {
+    margin-top: 30px;
+  }
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .secondary-nav {
+    margin-top: 40px;
+  }
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 991px) {
+  .nav-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(
+      270deg,
+      var(--navSection-color-A) 0%,
+      var(--navSection-color-B) 100%
+    );
+    z-index: 2;
+  }
+
+  .navbar-nav {
+    padding-left: 90px;
+    padding-bottom: 90px;
+  }
 }
 
 
